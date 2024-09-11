@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.MainPage" 
+             Title="Калькулятор">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="Display"
+               Text="0"
+               Grid.Row="0"
+               Grid.ColumnSpan="4"
+               HorizontalTextAlignment="End"
+               FontSize="30"
+               Padding="10"/>
+
+
+        <Button Text="x^2"
+                Grid.Row="1"
+                Grid.Column="2"
+                Clicked="OtherButton_clicked"/>
+        <Button Text="sqrt"
+                Grid.Row="1"
+                Grid.Column="3"
+                Clicked="OtherButton_clicked"/>
+        <Button Text="1/x"
+                Grid.Row="1"
+                Grid.Column="1"
+                Clicked="OtherButton_clicked"/>
+        <Button Text="%"
+                Grid.Row="1"
+                Grid.Column="0"
+                Clicked="OtherButton_clicked"/>
+        <Button Text="CE"
+                Grid.Row="2"
+                Grid.Column="2"
+                Clicked="ClearButton_Clicked"/>
+        <Button Text="C" 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Clicked="ClearButton_Clicked"/>
+        <Button Text="←" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                Clicked="BackspaceButton_Clicked"/>
+        <Button Text="/" 
+                Grid.Row="2" 
+                Grid.Column="3" 
+                Clicked="OperatorButton_Clicked"/>
+        <Button Text="*" 
+                Grid.Row="3" 
+                Grid.Column="3" 
+                Clicked="OperatorButton_Clicked"/>
+
+        <Button Text="7" 
+                Grid.Row="3" 
+                Grid.Column="0" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="8" 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="9" 
+                Grid.Row="3" 
+                Grid.Column="2" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="-" 
+                Grid.Row="4" 
+                Grid.Column="3" 
+                Clicked="OperatorButton_Clicked"/>
+
+        <Button Text="4" 
+                Grid.Row="4" 
+                Grid.Column="0" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="5" 
+                Grid.Row="4" 
+                Grid.Column="1" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="6" 
+                Grid.Row="4" 
+                Grid.Column="2" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="+" 
+                Grid.Row="5" 
+                Grid.Column="3" 
+                Clicked="OperatorButton_Clicked"/>
+
+        <Button Text="1" 
+                Grid.Row="5" Grid.Column="0" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="2" 
+                Grid.Row="5" 
+                Grid.Column="1" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="3" 
+                Grid.Row="5" 
+                Grid.Column="2" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="=" 
+                Grid.Row="6" 
+                Grid.Column="3" 
+                Clicked="EqualButton_Clicked"/>
+
+        <Button Text="+/-" 
+                Grid.Row="6" 
+                Grid.Column="0" 
+                Clicked="OtherButton_clicked"/>
+        <Button Text="0" 
+                Grid.Row="6" 
+                Grid.Column="1" 
+                Clicked="NumberButton_Clicked"/>
+        <Button Text="," 
+                Grid.Row="6" 
+                Grid.Column="2" 
+                Clicked="NumberButton_Clicked"/>
+    </Grid>
+</ContentPage>
