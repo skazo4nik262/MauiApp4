@@ -22,7 +22,8 @@ namespace MauiApp4
             if (isOperatorPressed)
             {
                 Display.Text = number;
-                //isOperatorPressed = false;
+                isOperatorPressed = false;
+                
             }
             else
             {
@@ -40,15 +41,47 @@ namespace MauiApp4
             Button button = (Button)sender;
             operatorSymbol = button.Text;
 
+            if (operatorSymbol != "")
+            {
+                if (isOperatorPressed)
+                {
+                    secondNumber = Convert.ToDouble(Display.Text);
+                    double result = 0;
+
+                    
+                        if (operatorSymbol == "+")
+                            result = firstNumber + secondNumber;
+                        else if (operatorSymbol == "-")
+                            result = firstNumber - secondNumber;
+                        else if (operatorSymbol == "*")
+                            result = firstNumber * secondNumber;
+                        else if (operatorSymbol == "/")
+                        {
+                            if (secondNumber == 0)
+                                Display.Text = "Ошибка";
+                            else
+                                result = firstNumber / secondNumber;
+                        }
+                    
+
+                    Display.Text = result.ToString(); isOperatorPressed = false;
+                }
+
+            }
 
             firstNumber = Convert.ToDouble(Display.Text);
             isOperatorPressed = true;
+
+            history += secondNumber + " " + operatorSymbol + " ";
+            History.Text = history;
         }
 
         private void EqualButton_Clicked(object sender, EventArgs e)
         {
             secondNumber = Convert.ToDouble(Display.Text);
             double result = 0;
+            history = "";
+            History.Text = history;
 
             switch (operatorSymbol)
             {
@@ -57,7 +90,7 @@ namespace MauiApp4
                     break;
                 case "-":
                     result = firstNumber - secondNumber;
-                    break;
+                    break;45r
                 case "*":
                     result = firstNumber * secondNumber;
                     break;
@@ -96,6 +129,7 @@ namespace MauiApp4
                     result = Math.Pow(secondNumber, 2);
                     break;
                 case "%":
+                    isOperatorPressed = true;
                     if (isOperatorPressed == true)
                     {
                         switch (operatorSymbol)
@@ -132,17 +166,16 @@ namespace MauiApp4
             firstNumber = 0;
             operatorSymbol = "";
             isOperatorPressed = false;
+            history = "";
+            History.Text = history;
         }
         private void ClearEButton_Clicked(object sender, EventArgs e)
         {
-            if (isOperatorPressed)
-            {
-                Display.Text = "0";
-                operatorSymbol = "";
-                isOperatorPressed = false;
-                secondNumber = 0;
-            }
+            secondNumber = 0;
+            firstNumber = 0;
+            Display.Text = "0";
         }
+        
 
         private void BackspaceButton_Clicked(object sender, EventArgs e)
         {

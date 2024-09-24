@@ -4,10 +4,30 @@
              x:Class="MauiApp4.MainPage" 
              Title="Калькулятор">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Background" Value="DarkGray"/>
+            </Style>
+
+            <Style x:Key="NumButton" TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Background" Value="Gray"/>
+            </Style>
+
+            <Style x:Key="RedBut" TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Background" Value="DeepPink"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -23,113 +43,120 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label x:Name="Display"
+        <StackLayout Grid.Row="0" Grid.ColumnSpan="4">
+            <Label x:Name="History"
+                Text=""
+                HorizontalTextAlignment="End"
+                FontSize="30"
+                Padding="10"
+                TextColor="#aaa"/>
+            <Label x:Name="Display"
                Text="0"
-               Grid.Row="0"
-               Grid.ColumnSpan="4"
                HorizontalTextAlignment="End"
                FontSize="30"
                Padding="10"/>
+        </StackLayout>
+
 
 
         <Button Text="x^2"
                 Grid.Row="1"
                 Grid.Column="2"
-                Clicked="OtherButton_clicked"/>
+                Clicked="OtherButton_clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="sqrt"
                 Grid.Row="1"
                 Grid.Column="3"
-                Clicked="OtherButton_clicked"/>
+                Clicked="OtherButton_clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="1/x"
                 Grid.Row="1"
                 Grid.Column="1"
-                Clicked="OtherButton_clicked"/>
+                Clicked="OtherButton_clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="%"
                 Grid.Row="1"
                 Grid.Column="0"
-                Clicked="OtherButton_clicked"/>
+                Clicked="OtherButton_clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="CE"
                 Grid.Row="2"
                 Grid.Column="2"
-                Clicked="ClearButton_Clicked"/>
+                Clicked="ClearEButton_Clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="C" 
                 Grid.Row="2" 
                 Grid.Column="0" 
-                Clicked="ClearButton_Clicked"/>
+                Clicked="ClearButton_Clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="←" 
                 Grid.Row="2" 
                 Grid.Column="1" 
-                Clicked="BackspaceButton_Clicked"/>
+                Clicked="BackspaceButton_Clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="/" 
                 Grid.Row="2" 
                 Grid.Column="3" 
-                Clicked="OperatorButton_Clicked"/>
+                Clicked="OperatorButton_Clicked" Style="{StaticResource ButtonStyle}"/>
         <Button Text="*" 
                 Grid.Row="3" 
                 Grid.Column="3" 
-                Clicked="OperatorButton_Clicked"/>
+                Clicked="OperatorButton_Clicked" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="7" 
                 Grid.Row="3" 
                 Grid.Column="0" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="8" 
                 Grid.Row="3" 
                 Grid.Column="1" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="9" 
                 Grid.Row="3" 
                 Grid.Column="2" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="-" 
                 Grid.Row="4" 
                 Grid.Column="3" 
-                Clicked="OperatorButton_Clicked"/>
+                Clicked="OperatorButton_Clicked" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="4" 
                 Grid.Row="4" 
                 Grid.Column="0" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="5" 
                 Grid.Row="4" 
                 Grid.Column="1" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="6" 
                 Grid.Row="4" 
                 Grid.Column="2" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="+" 
                 Grid.Row="5" 
                 Grid.Column="3" 
-                Clicked="OperatorButton_Clicked"/>
+                Clicked="OperatorButton_Clicked" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="1" 
                 Grid.Row="5" Grid.Column="0" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="2" 
                 Grid.Row="5" 
                 Grid.Column="1" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="3" 
                 Grid.Row="5" 
                 Grid.Column="2" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="=" 
                 Grid.Row="6" 
                 Grid.Column="3" 
-                Clicked="EqualButton_Clicked"/>
+                Clicked="EqualButton_Clicked" Style="{StaticResource RedBut}"/>
 
         <Button Text="+/-" 
                 Grid.Row="6" 
                 Grid.Column="0" 
-                Clicked="OtherButton_clicked"/>
+                Clicked="OtherButton_clicked" Style="{StaticResource NumButton}"/>
         <Button Text="0" 
                 Grid.Row="6" 
                 Grid.Column="1" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
         <Button Text="," 
                 Grid.Row="6" 
                 Grid.Column="2" 
-                Clicked="NumberButton_Clicked"/>
+                Clicked="NumberButton_Clicked" Style="{StaticResource NumButton}"/>
     </Grid>
 </ContentPage>
